@@ -11,7 +11,7 @@ When('I enter password {kraken-string}', async function (password) {
 });
 
 When('I click next', async function() {
-    let element = await this.driver.$('#ember12');
+    let element = await this.driver.$('button[type="submit"]');
     return await element.click();
 });
 
