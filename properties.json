@@ -2,5 +2,20 @@
     "USERNAME1": "f.alarconf@uniandes.edu.co",
     "PASSWORD1": "fredy12345",
     "TITLE": "Nuevo Título",
-    "DESCRIPTION": "Nueva descripción"
+    "DESCRIPTION": "Nueva descripción",
+    "INVALID_USERNAME": "xxx@xxx.com",
+    "INVALID_PASSWORD": "123",
+    "TAG1": "Tag ghost",
+    "TAG2": "Tag ghost 2",
+    "TAG3": "Tag ghost 3",
+    "TAGPOST": "Tag post",
+    "TAGPAGE": "Tag page",
+    "POST1": "Post ghost 1",
+    "CONPOST1": "Contenido Post ghost 1",
+    "POST2": "Post ghost Edited",
+    "CONPOST2": "Contenido Post ghost edited",
+    "POST3": "Post ghost new",
+    "CONPOST3": "Contenido Post ghost new",
+    "PAGE1": "Page ghost 1",
+    "CONPAGE1": "Contenido Page ghost 1"
 }

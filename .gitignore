@@ -3,6 +3,5 @@
 npm-debug.log
 yarn-error.log
 
-# report output
-/cypress/videos
-/cypress/screenshots
+/reports
+/.kraken
