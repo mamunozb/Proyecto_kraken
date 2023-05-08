@@ -239,3 +239,77 @@ Then('I validate page publication', async function () {
         return error;
     }
 });
+
+
+Then('I validate login error message', async function () {
+    let element = await this.driver.$('p.main-error');
+    return assert.notEqual(element, undefined)
+});
+
+Then('I validate login success', async function () {
+    let element = await this.driver.$('.gh-nav-menu-details-blog');
+    return assert.notEqual(element, undefined)
+});
+
+When('I expand profile options', async function () {
+    let element = await this.driver.$('.gh-nav-bottom > div.pointer');
+    return await element.click();
+});
+
+When('I click on logout', async function () {
+    let element = await this.driver.$('a[href="#/signout/"]');
+    return await element.click();
+});
+
+Then('I am redirected to login page', async function () {
+    let url = await this.driver.getUrl();
+    return assert.equal(url.includes('/ghost/#/signin'), true)
+});
+
+When('I expand publish post', async function () {
+    let element = await this.driver.$('div.gh-publishmenu-trigger');
+    return await element.click();
+});
+
+When('I click publish post', async function () {
+    let element = await this.driver.$('button.gh-publishmenu-button');
+    return await element.click();
+});
+
+Then('I validate post was published', async function () {
+    let element = await this.driver.$('div.gh-publishmenu-trigger');
+    return assert.equal((await element.getText()).trim(), "Update");
+});
+
+When('I expand setting post', async function () {
+    let element = await this.driver.$('button.post-settings');
+    return await element.click();
+});
+
+When('I scroll to buttom', async function () {
+    let element = await this.driver.$('.settings-menu-content');
+    return await element.scrollIntoView({ block: "end" });
+});
+
+When('I click delete post', async function () {
+    let element = await this.driver.$('button.settings-menu-delete-button');
+    return await element.click();
+});
+
+When('I click to confirm delete post', async function () {
+    let element = await this.driver.$('.modal-content > .modal-footer > button.gh-btn-red');
+    return await element.click();
+});
+
+Then('I am redirected to posts list', async function () {
+    let url = await this.driver.getUrl();
+    return assert.equal(url.includes('ghost/#/posts'), true)
+});
+
+Then('I search post {kraken-string} in the list', async function (post) {
+    let index = await this.driver.$$('.posts-list li > a > h3')
+        .findIndex(async x => (await x.getText()).trim() == post)
+    assert.notEqual(index, -1);
+    let elementLinks = await this.driver.$$(`.posts-list li > a`);
+    return await elementLinks[index].click();
+});
