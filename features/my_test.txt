@@ -1,3 +1,12 @@
+    "USERNAME1": "hmaury1@gmail.com",
+    "PASSWORD1": "Hola123456*#",
+    "INVALID_USERNAME": "xxx@xxx.com",
+    "INVALID_PASSWORD": "123",
+
+    "POST2": "Post ghost Edited",
+    "CONPOST2": "Contenido Post ghost edited",
+    "POST3": "Post ghost new",
+    "CONPOST3": "Contenido Post ghost new",
 
 @user1 @web
 Scenario: hacer login con credenciales invalidas y luego con credenciales validas
